@@ -1,0 +1,7 @@
+#use form_tag if you dont have a model file
+#every form needs action and method; by default form_tag is POST, so only action needed
+<%=  form_tag sessions_path do  %>
+    <%= text_field_tag :username, nil, placeholder: "Username" %>
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <%= submit_tag "Sign In"
+    <% end %>
