@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       if logged_in?
         flash[:msg] = "Welcome #{current_user.username}"
       end
+      
 
     end
   

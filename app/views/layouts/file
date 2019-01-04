@@ -12,3 +12,21 @@
   <%=f.submit%>
 <%end%>
   
+  -----------------------------
+
+  <% @pictures.each do |picture|%>
+    <a href="/pictures/<%= picture.id %>"><img src="<%= picture.image_url %>" id="bigthumb"></a>
+<% end %>
+
+-------------------------------
+
+arr = []
+<% Tag.most_popular.each do |tag| %>
+    <% Tag.all.each do |t|%>
+        <% if t.name == tag %>
+       <%  arr  << t.pictures %>
+       <%  end %>
+   <%  end %>
+<% end %>
+
+

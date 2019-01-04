@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             #YOU ARE WHO YOU SAY YOU ARE
             redirect_to user_path(@user)
         else
-            flash[:error] = ["Username & Password do not match"]
+            flash[:errors] = @user.errors.full_messages
                 redirect_to new_session_path
         end
     end

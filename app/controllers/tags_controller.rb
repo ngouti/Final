@@ -1,4 +1,8 @@
 class TagsController < ApplicationController
+    def index
+        @tags = Tag.all 
+    end
+    
     def create
         @tag = Tag.create(tag_params)
     end

@@ -1,8 +1,14 @@
-<h2>Top Pictures: </h2>
-
-
-<% @pictures.each do |picture|%>
+<h1>All Pictures: </h1>
+ <% @pictures.each do |picture|%>
     <a href="/pictures/<%= picture.id %>"><img src="<%= picture.image_url %>" id="bigthumb"></a>
 <% end %>
 
+
+
+
+
+<h1>Top Tag Pictures: </h1>
+<% @array.each do |lp| %>
+<%= link_to image_tag lp %>
+<% end%>
 
