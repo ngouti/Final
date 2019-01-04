@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-    # skip_before_action :authorized, only: [:new, :create]
+    before_action :authorized
+   skip_before_action :authorized, only: [:new, :create]
     def new
 
     end
@@ -7,6 +8,7 @@ class SessionsController < ApplicationController
     def create
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
             #YOU ARE WHO YOU SAY YOU ARE
             redirect_to user_path(@user)
         else
@@ -16,8 +18,14 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session[:user_id] = nil
+        session.delete(:user_id)
         redirect_to login_path
+      end
+
+      private
+
+      def authorized
+        return head(:forbidden) unless session.include? :user_id
       end
 end
 

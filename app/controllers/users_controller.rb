@@ -9,10 +9,10 @@ class UsersController < ApplicationController
       if logged_in?
         flash[:msg] = "Welcome #{current_user.username}"
       end
-      if params[:id] != current_user.id.to_s
-        flash[:unauthorized] = "Unauthorized Access"
-        redirect_to user_path(current_user)
-      end
+    #   if params[:id] != current_user.id.to_s
+    #     flash[:unauthorized] = "Unauthorized Access"
+    #     redirect_to user_path(current_user)
+    #   end
     end
   
   
