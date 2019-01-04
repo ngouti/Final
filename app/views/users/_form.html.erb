@@ -2,12 +2,10 @@
 <p><%=flash[:error]%></p>
 <%end%>
 
-<%= form_for  @user do |f| %>
-   <!-- <%= f.label :email %> <br> -->
-    <%= f.text_field :username %> <br>
-    <%= f.text_field :password %> <br>
-    <%= f.text_field :password_confirmation %> <br>
-
-    <%= f.submit %> 
-    <% end %>
+<%= form_for @user do |f| %>
+    <%= f.text_field :username, placeholder: "Username" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    <%= f.submit %>
+  <% end %>
     
