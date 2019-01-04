@@ -1,0 +1,7 @@
+<%=form_for @picture do |f|%>
+  <%=f.text_field :image_url, placeholder: "Image URL"%>
+  <%=f.text_field :title, placeholder: "Title"%>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  <%=f.submit%>
+<%end%>
+  

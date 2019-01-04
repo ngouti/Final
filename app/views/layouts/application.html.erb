@@ -10,16 +10,27 @@
   </head>
 
   <body bgcolor=lightblue>
-    <table width="auto" height="100px">
+    <table width="auto" height="100px" style="width:100%;text-align:center;background-color:lightyellow;">
+  <tr>
+      <td colspan="5"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"></td>
+      <td colspan="2" style="font-size: 4em; font-weight: bold; position: center; top: 25px;">
+        <a href="/">Picture Stuff</a></td>
+    </tr>
   
-  
+  <tr>
   <%if logged_in?%>
     <%=link_to 'Logout', logout_path, method: 'post'%> <br>
+    <%=link_to 'Upload', new_picture_path%> <br>
+    
   <%else%>
     <%=link_to 'Login', login_path%> <br>
     <%=link_to 'Sign Up', signup_path%>
   <%end%>
-  
+  <tr>
   </table>
   <%= yield %>
 </body>

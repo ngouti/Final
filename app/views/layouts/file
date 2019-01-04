@@ -5,5 +5,10 @@
 
   ----------------------------
 
-
+<%=form_for @picture do |f|%>
+  <%=f.text_field :image_url%>
+  <%=f.text_field :title%>
+  <%=f.number_field :user_id%>
+  <%=f.submit%>
+<%end%>
   

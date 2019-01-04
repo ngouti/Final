@@ -24,9 +24,9 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.valid?
         @user.save
-        redirect_to user_path(@user)
+        redirect_to login_path
       else
-        flash[:error] = "Wrong Password or Username"
+        flash[:errors] = @user.errors.full_messages
         redirect_to new_user_path
       end
     end

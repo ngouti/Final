@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   post "/logout", to: "sessions#destroy"
+  get "/upload", to: "pictures#new"
+  post "/upload", to: "pictures#create"
   # delete "/sessions", to: "sessions#destroy"
   # post '/comments', to: 'comments#create'
 end

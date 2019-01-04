@@ -3,6 +3,10 @@ class PicturesController < ApplicationController
         
     end
 
+    def new
+        @picture = Picture.new
+    end
+
     def create
         @picture = Picture.create(picture_params)
     end
