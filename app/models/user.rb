@@ -10,5 +10,8 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, length: {minimum: 4}
 
+    def received_comments
+
+    end
 
 end

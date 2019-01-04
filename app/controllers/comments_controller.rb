@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       comment = Comment.new(comment_params)
       if comment.valid?
         comment.save
-        redirect_to comment.game
+        redirect_to picture_path
       else
         render :new
       end
