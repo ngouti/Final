@@ -35,7 +35,11 @@ Comment.create(content: "Cute!", picture_id: 3, user_id: 2)
 Comment.create(content: "Poop!", picture_id: 3, user_id: 1)
 Comment.create(content: "Shoot!", picture_id: 3, user_id: 3)
 Comment.create(content: "Cool!", picture_id: 5, user_id: 1)
-Comment.create(content: "Food!", picture_id: 5, user_id: 3)
+Comment.create(content: "Feed me!", picture_id: 5, user_id: 3)
+Comment.create(content: "Food!", picture_id: 4, user_id: 2)
+Comment.create(content: "You silly human.", picture_id: 4, user_id: 1)
+Comment.create(content: "Food!", picture_id: 4, user_id: 3)
+
 
 PictureTag.create(picture_id: 2, tag_id: 2)
 PictureTag.create(picture_id: 4, tag_id: 2)
