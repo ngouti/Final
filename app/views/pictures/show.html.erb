@@ -5,7 +5,7 @@
 <% user = comment.user_id%> 
 <% found = User.all.find(user) %>
 <h2><%= name = found.username %></h2> <br>
-<%= comment.content %> <br>
+<h5><%= comment.content %></h5> <br>
 
 
 <% end %>
