@@ -1,0 +1,8 @@
+<h2>Top Pictures: </h2>
+
+
+<% @pictures.each do |picture|%>
+    <a href="/pictures/<%= picture.id %>"><img src="<%= picture.image_url %>" id="bigthumb"></a>
+<% end %>
+
+

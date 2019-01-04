@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-    before_action :authorized
-   skip_before_action :authorized, only: [:new, :create]
+    before_action :access
+   skip_before_action :access, only: [:new, :create]
     def new
 
     end
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
       private
 
-      def authorized
+      def access
         return head(:forbidden) unless session.include? :user_id
       end
 end

@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
     def index
-        
+        @pictures = Picture.all
     end
 
     def new
@@ -9,6 +9,10 @@ class PicturesController < ApplicationController
 
     def create
         @picture = Picture.create(picture_params)
+    end
+
+    def show
+        @picture = Picture.find(params[:id])
     end
 
     private

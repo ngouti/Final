@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+root 'home#show'
+  # get "/", to: :home
   resources :sessions
   resources :picture_tags
   resources :users
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   post "/logout", to: "sessions#destroy"
   get "/upload", to: "pictures#new"
   post "/upload", to: "pictures#create"
+  
   # delete "/sessions", to: "sessions#destroy"
   # post '/comments', to: 'comments#create'
 end

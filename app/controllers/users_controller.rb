@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    # skip_before_action :authorized, only: [:new, :create]
+  before_action :access
+   skip_before_action :access, only: [:new, :create]
     def index
       @users = User.all
     end
@@ -9,10 +10,7 @@ class UsersController < ApplicationController
       if logged_in?
         flash[:msg] = "Welcome #{current_user.username}"
       end
-    #   if params[:id] != current_user.id.to_s
-    #     flash[:unauthorized] = "Unauthorized Access"
-    #     redirect_to user_path(current_user)
-    #   end
+
     end
   
   
@@ -54,6 +52,10 @@ class UsersController < ApplicationController
     
     def user_params
         params.require(:user).permit(:email, :username, :password, :password_confirmation)
+    end
+
+    def access
+      return head(:forbidden) unless session.include? :user_id
     end
 
 end
