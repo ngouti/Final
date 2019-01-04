@@ -2,13 +2,12 @@
 <p><%=flash[:error]%></p>
 <%end%>
 
-<%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :username %>
-    <%= f.text_field :password %>
-    <%= f.text_field :password_confirmation %>
+<%= form_for  @user do |f| %>
+   <!-- <%= f.label :email %> <br> -->
+    <%= f.text_field :username %> <br>
+    <%= f.text_field :password %> <br>
+    <%= f.text_field :password_confirmation %> <br>
 
-    <%= f.text_field :email %>
-    <%= f.submit %>
+    <%= f.submit %> 
     <% end %>
     
